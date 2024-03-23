@@ -1,0 +1,206 @@
+[versions]
+androidGradlePlugin = "8.3.1"
+kotlin = "1.9.22"
+ksp = "1.9.22-1.0.17"
+firebasecrashlyticsplugin = "2.9.9"
+googleServices = "4.4.1"
+
+appcompatVersion = "1.6.1"
+coreKtxVersion = "1.12.0"
+materialVersion = "1.11.0"
+recyclerViewVersion = "1.3.2"
+activityVersion = "1.8.2"
+fragmentVersion = "1.6.2"
+constraintLayoutVersion = "2.1.4"
+cardViewVersion = "1.0.0"
+lifecycleVersion = "2.7.0"
+desugar = "2.0.4"
+
+preferenceVersion = "1.2.1"
+
+swipeLayoutVersion = "1.1.0"
+
+customViewVersion = "1.0.9"
+
+retrofitVersion = "2.9.0"
+
+picassoVersion = "2.71828"
+
+hiltVersion = "2.50"
+navigationVersion = "2.7.7"
+timberVersion = "5.0.1"
+viewStateLayoutVersion = "1.1.1"
+dateced = "1.0.8"
+coil = "2.5.0"
+sunmiVersion = "1.0.22"
+rxJava3Version = "3.1.8"
+rxAndroid3Version = "3.0.2"
+okhttp3Version = "4.12.0"
+gsonVersion = "2.10.1"
+sdpVersion = "1.1.0"
+roomVersion = "2.6.1"
+mapVersion = "18.1.0"
+mapLocationVersion = "21.0.1"
+mapPlaceVersion = "2.7.0"
+firebaseBomVersion= "32.7.3"
+circleImageViewVersion = "3.1.0"
+alerter = "7.2.4"
+datePicker = "4.2.3"
+coroutinesVersion = "1.7.3"
+leakcanaryVersion = "2.12"
+playAppUpdateVersionVersion = "2.0.1"
+facebookVersion = "15.1.0"
+facebookMarketingVersion = "7.0.1"
+viewPagerDotIndicatorVersion = "5.0"
+hiltNavigationFragmentVersion = "1.2.0"
+javaxInject = "1"
+
+espressoVersion = "3.5.1"
+junitVersion = "4.13.2"
+junitExtVersion = "1.1.5"
+
+[libraries]
+androidx-appcompat = {group = "androidx.appcompat",name = "appcompat",version.ref = "appcompatVersion"}
+androidx-core-ktx = {group = "androidx.core", name = "core-ktx", version.ref = "coreKtxVersion"}
+androidx-fragment-ktx = {group = "androidx.fragment",name = "fragment-ktx", version.ref = "fragmentVersion"}
+androidx-activity-ktx = {group = "androidx.activity",name = "activity-ktx", version.ref = "activityVersion"}
+androidx-viewmodel-ktx = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion"}
+androidx-viewmodel-save-state = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycleVersion"}
+androidx-livedata = {group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleVersion"}
+androidx-lifecycle-runtime = {group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion"}
+androidx-lifecycle-service = {group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycleVersion"}
+androidx-preference = {group = "androidx.preference", name = "preference", version.ref = "preferenceVersion"}
+androidx-swipe-refresh = {group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeLayoutVersion"}
+
+androidx-constraint-layout = {group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintLayoutVersion"}
+androidx-recycler-view = {group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerViewVersion"}
+card-view = {group = "androidx.cardview", name = "cardview", version.ref = "cardViewVersion"}
+custom-view = {group = "com.github.kamrul3288", name = "customview-android", version.ref = "customViewVersion"}
+
+google-material = {group = "com.google.android.material", name = "material", version.ref = "materialVersion"}
+
+navigation-fragment = {group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationVersion"}
+navigation-ui = {group = "androidx.navigation", name = "navigation-ui-ktx" ,version.ref = "navigationVersion"}
+
+
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
+hilt-android = {group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion"}
+hilt-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion"}
+hilt-navigation = {group = "androidx.hilt", name = "hilt-navigation-fragment", version.ref = "hiltNavigationFragmentVersion"}
+
+retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion"}
+retrofit-rxjava3-adapter = {group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofitVersion"}
+retrofit-json-converter = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion"}
+
+okhttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3Version"}
+okhttp-intercepter = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3Version"}
+
+gson = {group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion"}
+
+rx-java3 = {group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava3Version"}
+rx-java3-android = {group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxAndroid3Version"}
+
+picasso = {group = "com.squareup.picasso", name = "picasso", version.ref = "picassoVersion"}
+sdp = {group = "com.intuit.sdp", name = "sdp-android", version.ref = "sdpVersion"}
+ssp = {group = "com.intuit.ssp", name = "ssp-android", version.ref = "sdpVersion"}
+cirlce-imageview = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImageViewVersion"}
+kotlin-coroutines = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutinesVersion"}
+leakcanary = {group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakcanaryVersion"}
+dot-indicator = {group = "com.tbuonomo", name = "dotsindicator", version.ref = "viewPagerDotIndicatorVersion"}
+timber = {group = "com.jakewharton.timber", name = "timber", version.ref = "timberVersion"}
+view-state-layout = {group = "com.github.kamrul3288", name = "viewstatelayout", version.ref = "viewStateLayoutVersion"}
+dateced = {group = "com.github.kamrul3288", name = "dateced", version.ref = "dateced"}
+coil = {group = "io.coil-kt", name = "coil", version.ref = "coil"}
+date-picker = {group = "com.wdullaer", name = "materialdatetimepicker", version.ref = "datePicker"}
+
+sunmi-printerlibrary = { group = "com.sunmi", name = "printerlibrary", version.ref = "sunmiVersion" }
+
+firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBomVersion"}
+firebase-messaging = {group = "com.google.firebase", name = "firebase-messaging-ktx"}
+firebase-analytics = {group = "com.google.firebase", name = "firebase-analytics-ktx"}
+firebase-crashlytics = {group = "com.google.firebase", name = "firebase-crashlytics-ktx"}
+
+room-ktx = {group = "androidx.room", name = "room-ktx", version.ref = "roomVersion"}
+room-runtime = {group = "androidx.room", name = "room-runtime", version.ref = "roomVersion"}
+room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "roomVersion"}
+room-common = {group = "androidx.room", name = "room-common", version.ref = "roomVersion"}
+
+alerter = {group = "com.github.tapadoo", name = "alerter", version.ref = "alerter"}
+
+test-junit = {group = "junit", name = "junit", version.ref="junitVersion"}
+test-extjunit = {group = "androidx.test.ext", name = "junit", version.ref="junitExtVersion"}
+test-espresso = {group = "androidx.test.espresso", name = "espresso-core", version.ref="espressoVersion"}
+
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+firebase-crashlytics-gradle-plugin = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebasecrashlyticsplugin" }
+ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+
+desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+
+[bundles]
+androidx-core-dependencies = [
+    "androidx.appcompat",
+    "androidx.core.ktx",
+    "google.material",
+    "androidx.recycler.view",
+    "androidx.constraint.layout",
+    "card.view",
+    "custom.view",
+    "androidx.activity.ktx",
+    "androidx.fragment.ktx",
+    "androidx.preference",
+]
+
+androidx-lifecycle-dependencies = [
+    "androidx.viewmodel.ktx",
+    "androidx.viewmodel.save.state",
+    "androidx.livedata",
+    "androidx.lifecycle.runtime",
+    "androidx.lifecycle.service",
+]
+
+rxjava3-dependencies = [
+    "rx.java3",
+    "rx.java3.android",
+]
+
+room-dependencies = [
+    "room-ktx",
+    "room-runtime",
+]
+
+network-dependencies = [
+    "retrofit",
+    "retrofit.rxjava3.adapter",
+    "retrofit.json.converter",
+    "okhttp",
+    "okhttp.intercepter",
+    "gson",
+]
+
+androidx-navigation-dependencies = [
+    "navigation.fragment",
+    "navigation.ui",
+    "hilt.navigation"
+]
+
+android-responsive-size-dependencies = [
+    "sdp",
+    "ssp"
+]
+
+[plugins]
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebasecrashlyticsplugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigationVersion" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pourosova Data Entry</string>
+
+    <!--description string resources -->
+    <string name="image_content_description">filer_image_toolbar</string>
+    <!--description string resources -->
+</resources>
