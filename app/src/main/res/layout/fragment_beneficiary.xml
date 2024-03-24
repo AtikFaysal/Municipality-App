@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/updateBtn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_10">
+
+
+            <com.pourosova.data.core.designsystem.CustomMediumTV
+                android:id="@+id/serialTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/padding_5"
+                android:layout_marginTop="@dimen/padding_5"
+                android:layout_marginHorizontal="@dimen/margin_5"
+                android:paddingEnd="@dimen/padding_5"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Serial: 29HFH38FJ365456" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_name"
+                app:placeholderText="@string/hint_enter_name"
+                app:expandedHintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/serialTv">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/nameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_phone"
+                app:placeholderText="@string/hint_enter_phone"
+                app:expandedHintEnabled="false"
+                android:layout_marginEnd="@dimen/margin_5"
+                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/nameTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/phoneEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:focusable="false"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dobTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_dob"
+                app:placeholderText="@string/hint_enter_dob"
+                app:expandedHintEnabled="false"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/phoneTil"
+                app:layout_constraintTop_toTopOf="@+id/phoneTil"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneTil">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dobEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="@dimen/padding_12"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nidTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_nid"
+                app:placeholderText="@string/hint_enter_nid"
+                app:expandedHintEnabled="false"
+                android:layout_marginEnd="@dimen/margin_5"
+                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/phoneTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/nidEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:focusable="false"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fatherNidTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_father_nid"
+                app:placeholderText="@string/hint_enter_nid"
+                app:expandedHintEnabled="false"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/nidTil"
+                app:layout_constraintTop_toTopOf="@+id/nidTil"
+                app:layout_constraintBottom_toBottomOf="@+id/nidTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/fatherNidEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/husbandWifeNidTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_husband_wife_nid"
+                app:placeholderText="@string/hint_enter_nid"
+                app:expandedHintEnabled="false"
+                android:layout_marginEnd="@dimen/margin_5"
+                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/nidTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/husbandWifeNidEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fatherHusbandNidTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_husband_father_nid"
+                app:placeholderText="@string/hint_enter_name"
+                app:expandedHintEnabled="false"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/husbandWifeNidTil"
+                app:layout_constraintTop_toTopOf="@+id/husbandWifeNidTil"
+                app:layout_constraintBottom_toBottomOf="@+id/husbandWifeNidTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/fatherHusbandNidEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/occupationTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_occupation"
+                app:placeholderText="@string/hint_enter_occupation"
+                app:expandedHintEnabled="false"
+                android:layout_marginEnd="@dimen/margin_5"
+                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/husbandWifeNidTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/occupationEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/motherNameTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_mother_name"
+                app:placeholderText="@string/hint_enter_mother_name"
+                app:expandedHintEnabled="false"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/occupationTil"
+                app:layout_constraintTop_toTopOf="@+id/occupationTil"
+                app:layout_constraintBottom_toBottomOf="@+id/occupationTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/motherNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/villageTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:hint="@string/hint_village"
+                app:placeholderText="@string/hint_enter_village"
+                app:expandedHintEnabled="false"
+                android:layout_marginEnd="@dimen/margin_5"
+                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/occupationTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/villageEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/wordNoTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_word_no"
+                app:placeholderText="@string/hint_enter_word"
+                app:expandedHintEnabled="false"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/villageTil"
+                app:layout_constraintTop_toTopOf="@+id/villageTil"
+                app:layout_constraintBottom_toBottomOf="@+id/villageTil">
+
+                <com.pourosova.data.core.designsystem.CustomET
+                    android:id="@+id/wordNoEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageIv"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_margin="@dimen/margin_10"
+                android:scaleType="fitXY"
+                android:background="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/villageTil"/>
+
+            <com.iamkamrul.textview.TextViewRegular
+                android:id="@+id/addPhotoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/padding_15"
+                android:paddingVertical="@dimen/padding_5"
+                android:layout_margin="@dimen/margin_10"
+                android:text="@string/action_update_photo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/regular_text_size"
+                app:tv_background_shape="stroke"
+                app:tv_corner_radius="@dimen/five"
+                app:tv_stroke_width="@dimen/_1sdp"
+                app:tv_stroke_color="@color/colorPrimary"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="@+id/imageIv"
+                app:layout_constraintBottom_toBottomOf="@+id/imageIv"
+                app:layout_constraintStart_toEndOf="@+id/imageIv"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+
+    <com.iamkamrul.button.ButtonRegular
+        android:id="@+id/updateBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@color/colorPrimary"
+        app:btn_background_shape="rectangle"
+        app:btn_corner_radius="@dimen/_30sdp"
+        android:gravity="center"
+        android:padding="@dimen/padding_12"
+        android:text="@string/title_update"
+        android:layout_margin="@dimen/margin_10"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iamkamrul.vsl.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05"/>
+
+    <ImageView
+        android:id="@+id/appLogoIv"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/image_content_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalGl"/>
+
+    <com.iamkamrul.textview.TextViewBold
+        android:id="@+id/loginTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_log_in"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size"
+        android:layout_marginTop="@dimen/margin_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogoIv"/>
+
+    <com.iamkamrul.textview.TextViewRegular
+        android:id="@+id/loginHintsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_login"
+        android:textColor="@color/color_8D8D8F"
+        android:textSize="@dimen/regular_text_size"
+        android:layout_marginTop="@dimen/margin_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTitleTv"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginCl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginHintsTv">
+
+        <com.iamkamrul.textview.TextViewMedium
+            android:id="@+id/phoneTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_email"
+            android:textColor="@color/color_676769"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.iamkamrul.input.TextInputEditText
+            android:id="@+id/phoneNoET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            tools:text="atik@gmail.com"
+            android:hint="@string/hint_enter_phone_number"
+            android:background="@drawable/bg_solid_white_rounded_5_stroke_1_gray"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:singleLine="true"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintStart_toStartOf="@+id/phoneTitleTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneTitleTv"/>
+
+        <com.iamkamrul.textview.TextViewMedium
+            android:id="@+id/phoneErrorTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_676769"
+            android:paddingVertical="@dimen/padding_5"
+            tools:text="Invalid email"
+            android:visibility="gone"
+            android:drawableStart="@drawable/ic_error"
+            android:drawablePadding="@dimen/padding_5"
+            android:textSize="@dimen/extra_small_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNoET"/>
+
+        <com.iamkamrul.textview.TextViewMedium
+            android:id="@+id/passwordTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/caption_password"
+            android:textColor="@color/color_676769"
+            android:layout_marginTop="@dimen/margin_5"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneErrorTv"/>
+
+        <com.iamkamrul.input.TextInputEditText
+            android:id="@+id/passwordET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:singleLine="true"
+            tools:text="01647544954"
+            android:background="@drawable/bg_solid_white_rounded_5_stroke_1_gray"
+            android:hint="@string/hint_enter_password"
+            android:padding="@dimen/padding_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintStart_toStartOf="@+id/phoneTitleTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTitleTv"/>
+
+        <ImageView
+            android:id="@+id/passVisibleIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pass_visible"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:padding="@dimen/padding_5"
+            android:contentDescription="@string/image_content_description"
+            app:layout_constraintEnd_toEndOf="@+id/passwordET"
+            app:layout_constraintTop_toTopOf="@+id/passwordET"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordET"/>
+
+        <ImageView
+            android:id="@+id/passInVisibleIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pass_invisible"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:padding="@dimen/padding_5"
+            android:contentDescription="@string/image_content_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/passwordET"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordET"/>
+
+        <com.iamkamrul.textview.TextViewMedium
+            android:id="@+id/passwordErrorTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_676769"
+            android:paddingVertical="@dimen/padding_2"
+            android:layout_marginHorizontal="@dimen/margin_5"
+            android:drawableStart="@drawable/ic_error"
+            android:drawablePadding="@dimen/padding_5"
+            tools:text="Invalid password"
+            android:visibility="gone"
+            android:textSize="@dimen/extra_small_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordET"/>
+
+        <com.iamkamrul.textview.TextViewMedium
+            android:id="@+id/loginFailedTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_676769"
+            android:paddingVertical="@dimen/padding_5"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/margin_5"
+            android:drawableStart="@drawable/ic_error"
+            android:drawablePadding="@dimen/padding_5"
+            android:textSize="@dimen/regular_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordErrorTv"/>
+
+        <com.iamkamrul.button.ButtonRegular
+            android:id="@+id/loginBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@color/colorPrimary"
+            app:btn_background_shape="rectangle"
+            app:btn_corner_radius="@dimen/_30sdp"
+            android:gravity="center"
+            android:padding="@dimen/padding_12"
+            android:text="@string/title_log_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginFailedTv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.iamkamrul.vsl.ConstraintLayout>

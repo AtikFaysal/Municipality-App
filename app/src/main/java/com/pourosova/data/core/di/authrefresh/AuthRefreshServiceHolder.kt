@@ -1,13 +1,16 @@
 package com.pourosova.data.core.di.authrefresh
 
+import com.pourosova.data.core.model.apiresponse.auth.RefreshApiResponse
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 
-data class RefreshTokenApiResponse(val token:String)
 interface AuthRefreshApiService{
-    @GET("v1/refresh-token")
-    fun refreshToken(): Call<RefreshTokenApiResponse>
+
+    @POST("auth/refresh")
+    fun refreshToken(): Call<RefreshApiResponse>
 }
 
 class AuthRefreshServiceHolder{

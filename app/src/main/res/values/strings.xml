@@ -1,7 +1,79 @@
 <resources>
-    <string name="app_name">Pourosova Data Entry</string>
+    <string name="app_name">Pourosova</string>
 
     <!--description string resources -->
     <string name="image_content_description">filer_image_toolbar</string>
     <!--description string resources -->
+
+
+    <string name="action_logout">Logout</string>
+    <string name="action_update_photo">Update Photo</string>
+    <string name="action_see_beneficiary">See Beneficiary</string>
+
+    <string name="title_log_in">Log in</string>
+    <string name="title_update">Update</string>
+    <string name="title_home">Home</string>
+    <string name="title_email">Email</string>
+    <string name="title_beneficiary_list">Beneficiary List</string>
+    <string name="title_beneficiary_profile">Beneficiary Profile</string>
+    <string name="caption_password">Password</string>
+
+    <string name="hint_login">Enter your account details below.</string>
+    <string name="hint_enter_phone_number">Enter mobile number</string>
+    <string name="hint_enter_password">Enter password</string>
+
+    <string name="hint_select_division">Select Division</string>
+    <string name="hint_division">Division</string>
+    <string name="hint_select_district">Select District</string>
+    <string name="hint_district">District</string>
+    <string name="hint_select_sub_district">Select Upozila</string>
+    <string name="hint_sub_district">Upozila</string>
+    <string name="hint_select_municipality">Select Pouroshova</string>
+    <string name="hint_municipality">Pouroshova</string>
+    <string name="hint_enter_nid_serial">Enter NID or Serial</string>
+    <string name="hint_nid_serial">NID or Serial</string>
+
+
+    <string name="hint_enter_name">Enter Name</string>
+    <string name="hint_name">Name</string>
+
+    <string name="hint_enter_phone">Enter Phone</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_enter_nid">Enter NID</string>
+    <string name="hint_nid">NID</string>
+
+
+    <string name="hint_enter_father_nid">Enter Father NID</string>
+    <string name="hint_father_nid">Father NID</string>
+
+
+    <string name="hint_enter_village">Enter Village</string>
+    <string name="hint_village">Village</string>
+
+    <string name="hint_enter_word">Enter Word No</string>
+    <string name="hint_word_no">Word no</string>
+
+    <string name="hint_enter_dob">Enter DOB</string>
+    <string name="hint_dob">DOB</string>
+
+    <string name="hint_enter_occupation">Enter Occupation</string>
+    <string name="hint_occupation">Occupation</string>
+
+    <string name="hint_enter_mother_name">Enter Mother Name</string>
+    <string name="hint_mother_name">Mother Name</string>
+
+
+    <string name="hint_enter_husband_father_nid">Enter Husband/Father Name</string>
+    <string name="hint_husband_father_nid">Husband/Father Name</string>
+
+
+    <string name="hint_enter_husband_wife_nid">Enter Husband/Wife NID</string>
+    <string name="hint_husband_wife_nid">Husband/Wife NID</string>
+
+
+    <string name="message_text_copied">Text copied</string>
+
+
+    <string name="error_enter_min_password">Password must be longer than or equal to 8 characters</string>
+    <string name="error_invalid_email">Email is Required</string>
 </resources>

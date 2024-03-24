@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/padding_8"
+    android:paddingVertical="@dimen/padding_5"
+    android:background="@drawable/bg_solid_white_rounded_5_stroke_1_gray"
+    android:layout_marginVertical="@dimen/margin_5"
+    android:layout_marginHorizontal="@dimen/margin_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/serialCl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.pourosova.data.core.designsystem.CustomMediumTV
+            android:id="@+id/serialTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:paddingVertical="@dimen/padding_5"
+            android:paddingEnd="@dimen/padding_5"
+            android:textColor="@color/black"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableEnd="@drawable/ic_copy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Serial: 29HFH38FJ365456" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/nameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/nidTv"
+        app:layout_constraintStart_toStartOf="@+id/serialCl"
+        app:layout_constraintTop_toBottomOf="@+id/serialCl"
+        tools:text="Atik Faysal" />
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/nidTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/serialCl"
+        app:layout_constraintStart_toEndOf="@+id/nameTv"
+        app:layout_constraintTop_toTopOf="@+id/nameTv"
+        app:layout_constraintBottom_toBottomOf="@+id/nameTv"
+        tools:text="15454" />
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/phoneTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/nidTv"
+        app:layout_constraintStart_toStartOf="@+id/serialCl"
+        app:layout_constraintTop_toBottomOf="@+id/nameTv"
+        tools:text="0186656566566" />
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/fatherOrHusbandNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/serialCl"
+        app:layout_constraintStart_toEndOf="@+id/nameTv"
+        app:layout_constraintTop_toTopOf="@+id/phoneTv"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneTv"
+        tools:text="0186656566566" />
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/villageTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/nidTv"
+        app:layout_constraintStart_toStartOf="@+id/serialCl"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTv"
+        tools:text="Abced" />
+
+    <com.pourosova.data.core.designsystem.CustomMediumTV
+        android:id="@+id/wordNoTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_5"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/serialCl"
+        app:layout_constraintStart_toEndOf="@+id/nameTv"
+        app:layout_constraintTop_toTopOf="@+id/villageTv"
+        app:layout_constraintBottom_toBottomOf="@+id/villageTv"
+        tools:text="1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

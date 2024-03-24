@@ -1,6 +1,4 @@
-package com.pourosova.data.core.domain.usecase
-
-import com.pourosova.data.core.domain.base.BaseUseCase
+package com.pourosova.data.core.domain.base
 
 interface CoroutineBaseUseCase<Params, Type>: BaseUseCase {
     suspend fun execute(params: Params):Type

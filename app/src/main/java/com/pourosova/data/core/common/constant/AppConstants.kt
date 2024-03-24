@@ -5,4 +5,6 @@ object AppConstants {
 
     var IS_DATA_SET_CHANGED = false
     var SHOULD_TRIP_DATA_NEED_TO_RELOAD = false
+
+    val IMAGE_SELECTION_TYPE = arrayOf("image/png", "image/jpeg", "image/jpg")
 }

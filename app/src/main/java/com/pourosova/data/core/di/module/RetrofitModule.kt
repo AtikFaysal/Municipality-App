@@ -16,18 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
-    @Provides
-    @Singleton
-    @AppBaseUrl
-    @JvmStatic
-    fun provideRetrofitCredential(@AppBaseUrl baseUrl: String, okHttpClient: OkHttpClient, factory: GsonConverterFactory): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(okHttpClient)
-            .addConverterFactory(factory)
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-            .build()
-    }
 
     @Provides
     @Singleton

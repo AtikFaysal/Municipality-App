@@ -1,90 +1,95 @@
 package com.pourosova.data.core.data.apiservice
 
+import com.pourosova.data.core.model.apientity.beneficiary.UpdatePhotoApiEntity
+import com.pourosova.data.core.model.apiresponse.auth.LoginApiResponse
+import com.pourosova.data.core.model.apiresponse.auth.LogoutApiResponse
+import com.pourosova.data.core.model.apiresponse.auth.ProfileApiResponse
+import com.pourosova.data.core.model.apiresponse.auth.RefreshApiResponse
+import com.pourosova.data.core.model.apiresponse.beneficiary.AllBeneficiaryApiResponse
+import com.pourosova.data.core.model.apiresponse.beneficiary.BeneficiaryApiResponse
+import com.pourosova.data.core.model.apiresponse.beneficiary.UpdatePhotoApiResponse
+import com.pourosova.data.core.model.apiresponse.beneficiary.UpdateUserApiResponse
+import com.pourosova.data.core.model.apiresponse.utils.DistrictApiResponse
+import com.pourosova.data.core.model.apiresponse.utils.DivisionsApiResponse
+import com.pourosova.data.core.model.apiresponse.utils.MunicipalityApiResponse
+import com.pourosova.data.core.model.apiresponse.utils.SubDistrictApiResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Query
 
 interface ApiServices {
     @POST("auth/login")
     @FormUrlEncoded
-    fun login(
+    suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String,
-    ): Call<String>
+    ): Response<LoginApiResponse>
 
     @POST("auth/me")
-    fun fetchProfile(): Call<String>
-
-    @POST("auth/refresh")
-    fun refreshToken(): Call<String>
+    suspend fun fetchProfile(): Response<ProfileApiResponse>
 
     @POST("auth/logout")
-    fun logout(): Call<String>
+    suspend fun logout(): Response<LogoutApiResponse>
 
     @GET("divisions")
-    fun fetchDivisions(): Call<String>
+    suspend fun fetchDivisions(): Response<DivisionsApiResponse>
 
     @GET("get-districts-by-division")
-    fun fetchDistricts(
+    suspend fun fetchDistricts(
         @Query("division_id") divisionId : Int
-    ): Call<String>
+    ): Response<DistrictApiResponse>
 
     @GET("get-upazilas-by-district")
-    fun fetchSubDistricts(
+    suspend fun fetchSubDistricts(
         @Query("district_id") districtId : Int
-    ): Call<String>
+    ): Response<SubDistrictApiResponse>
 
     @GET("get-up_muni-by-upazila")
-    fun fetchPouroshova(
+    suspend fun fetchMunicipality(
         @Query("upazila_id") subDistrictId : Int
-    ): Call<String>
+    ): Response<MunicipalityApiResponse>
 
-    @GET("get-up_muni-by-upazila")
-    fun fetchUserList(
+    @GET("get-all-beneficiary")
+    suspend fun fetchUserList(
         @Query("up_muni_id") id : Int
-    ): Call<String>
+    ): Response<AllBeneficiaryApiResponse>
 
     @GET("beneficiary-profile")
-    fun fetchSingleUserProfile(
+    suspend fun fetchSingleUserProfile(
         @Query("up_muni_id") id : Int,
         @Query("nid_or_serial") nid : String,
-    ): Call<String>
+    ): Response<BeneficiaryApiResponse>
 
     @POST("beneficiary-image-upload")
-    @FormUrlEncoded
-    fun updateUserImage(
-        @Field("serial_no") serialNo : String,
-        @Field("image") image : String,
-    ): Call<String>
+    @Multipart
+    suspend fun updateUserImage(
+        @Part("serial_no") serialNo : RequestBody,
+        @Part image : MultipartBody.Part?,
+    ): Response<UpdatePhotoApiResponse>
 
-    @POST("eneficiary-data-update")
+    @POST("beneficiary-data-update")
     @FormUrlEncoded
-    fun updateUserData(
+    suspend fun updateUserData(
         @Field("serial_no") serialNo : String,
-        @Field("word_no") wordNo : String,
-        @Field("village") village : String,
+        @Field("word_no") wordNo : String?,
+        @Field("village") village : String?,
         @Field("name") name : String,
         @Field("nid_no") nidNo : String,
         @Field("phone") phone : String,
-        @Field("date_of_birth") dateOfBirth : String,
-        @Field("pesha") pesha : String,
-        @Field("father_or_husband_name") fatherOrHusbandName : String,
-        @Field("husband_wife_nid") husbandWifeNid : String,
-        @Field("father_nid") fatherNid : String,
-        @Field("mother_name") motherName : String,
-    ): Call<String>
-}
-
-class AuthRefreshServiceHolder{
-    private var authRefreshApi: ApiServices? = null
-    fun getAuthRefreshApi(): ApiServices? {
-        return authRefreshApi
-    }
-
-    fun setAuthRefreshApi(authRefreshApi: ApiServices) {
-        this.authRefreshApi = authRefreshApi
-    }
+        @Field("date_of_birth") dateOfBirth : String?,
+        @Field("pesha") pesha : String?,
+        @Field("father_or_husband_name") fatherOrHusbandName : String?,
+        @Field("husband_wife_nid") husbandWifeNid : String?,
+        @Field("father_nid") fatherNid : String?,
+        @Field("mother_name") motherName : String?,
+    ): Response<UpdateUserApiResponse>
 }

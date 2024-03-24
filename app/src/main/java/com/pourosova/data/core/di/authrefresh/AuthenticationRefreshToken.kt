@@ -17,8 +17,8 @@ class AuthenticationRefreshToken @Inject constructor(
             val refreshTokenResponse = authenticatorCall?.execute()
             if (refreshTokenResponse?.body() != null && refreshTokenResponse.isSuccessful && refreshTokenResponse.code() == 200){
                 refreshTokenResponse.body()?.let {
-                    sharedPrefHelper.putString(SpKey.authToken,it.token)
-                    response.request.newBuilder().header("Authorization", it.token).build()
+                    sharedPrefHelper.putString(SpKey.authToken,it.access_token ?: "")
+                    response.request.newBuilder().header("Authorization", it.access_token ?: "").build()
                 }
 
             } else null

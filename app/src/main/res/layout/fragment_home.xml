@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/divisionTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12"
+        app:endIconDrawable="@drawable/ic_drop_down"
+        android:layout_marginHorizontal="@dimen/margin_10"
+        android:hint="@string/hint_select_division"
+        app:expandedHintEnabled="true"
+        app:placeholderText="@string/hint_division"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <AutoCompleteTextView
+            android:id="@+id/divisionAtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/regular_text_size"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/districtTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12"
+        app:endIconDrawable="@drawable/ic_drop_down"
+        android:hint="@string/hint_select_district"
+        app:expandedHintEnabled="true"
+        app:placeholderText="@string/hint_district"
+        app:layout_constraintEnd_toEndOf="@+id/divisionTil"
+        app:layout_constraintStart_toStartOf="@id/divisionTil"
+        app:layout_constraintTop_toBottomOf="@+id/divisionTil">
+
+        <AutoCompleteTextView
+            android:id="@+id/districtAtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/regular_text_size"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/subDistrictTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12"
+        app:endIconDrawable="@drawable/ic_drop_down"
+        android:hint="@string/hint_select_sub_district"
+        app:expandedHintEnabled="true"
+        app:placeholderText="@string/hint_sub_district"
+        app:layout_constraintEnd_toEndOf="@+id/divisionTil"
+        app:layout_constraintStart_toStartOf="@id/divisionTil"
+        app:layout_constraintTop_toBottomOf="@+id/districtTil">
+
+        <AutoCompleteTextView
+            android:id="@+id/subDistrictAtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/regular_text_size"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/municipalityTil"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12"
+        app:endIconDrawable="@drawable/ic_drop_down"
+        android:hint="@string/hint_select_municipality"
+        app:expandedHintEnabled="true"
+        app:placeholderText="@string/hint_municipality"
+        app:layout_constraintEnd_toEndOf="@+id/divisionTil"
+        app:layout_constraintStart_toStartOf="@id/divisionTil"
+        app:layout_constraintTop_toBottomOf="@+id/subDistrictTil">
+
+        <AutoCompleteTextView
+            android:id="@+id/municipalityAtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/regular_text_size"
+            android:focusable="false"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.iamkamrul.textview.TextViewRegular
+        android:id="@+id/seeBeneficiaryTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_15"
+        android:paddingVertical="@dimen/padding_5"
+        android:layout_margin="@dimen/margin_10"
+        android:text="@string/action_see_beneficiary"
+        android:textColor="@color/black"
+        android:textSize="@dimen/regular_text_size"
+        app:tv_background_shape="stroke"
+        app:tv_corner_radius="@dimen/five"
+        app:tv_stroke_width="@dimen/_1sdp"
+        app:tv_stroke_color="@color/green_deep_light"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/municipalityTil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.iamkamrul.textview.TextViewRegular
+        android:id="@+id/logoutTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_15"
+        android:paddingVertical="@dimen/padding_5"
+        android:layout_margin="@dimen/margin_10"
+        android:text="@string/action_logout"
+        android:textColor="@color/black"
+        android:textSize="@dimen/regular_text_size"
+        app:tv_background_shape="stroke"
+        app:tv_corner_radius="@dimen/five"
+        app:tv_stroke_width="@dimen/_1sdp"
+        app:tv_stroke_color="@color/colorPrimary"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

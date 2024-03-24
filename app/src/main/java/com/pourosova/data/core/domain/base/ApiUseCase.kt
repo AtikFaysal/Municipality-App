@@ -1,7 +1,5 @@
-package com.pourosova.data.core.domain.usecase
+package com.pourosova.data.core.domain.base
 
-import com.pourosova.data.core.domain.base.ApiResult
-import com.pourosova.data.core.domain.base.BaseUseCase
 import kotlinx.coroutines.flow.Flow
 
 interface ApiUseCaseParams<Params, Type> : BaseUseCase {

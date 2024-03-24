@@ -10,6 +10,7 @@ object SpKey {
         const val avatar = "avatar"
         const val name = "name"
         const val userPhone = "userPhone"
+        const val email = "email"
     }
 
 }

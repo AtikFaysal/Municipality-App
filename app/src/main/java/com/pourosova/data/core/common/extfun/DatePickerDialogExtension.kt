@@ -12,7 +12,7 @@ import java.util.Calendar
 import java.util.Locale
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog as CustomDatePicker
 
-fun Activity.showDatePickerDialog(isEnableMinDate : Boolean = false, callback:(pickDate:String)->Unit){
+fun Activity.showDatePickerDialog( callback:(pickDate:String)->Unit){
     val calendar = Calendar.getInstance()
     val day = calendar[Calendar.DAY_OF_MONTH]
     val month = calendar[Calendar.MONTH]
@@ -21,8 +21,8 @@ fun Activity.showDatePickerDialog(isEnableMinDate : Boolean = false, callback:(p
     val datePicker = DatePickerDialog(this, { _, selectedYear, monthOfYear, dayOfMonth ->
             callback.invoke("$selectedYear-${String.format("%02d", monthOfYear+1)}-${String.format("%02d", dayOfMonth)}")
         }, calendar.get(Calendar.YEAR),  calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH))
-    if(isEnableMinDate)
-        datePicker.datePicker.minDate = System.currentTimeMillis()
+
+    datePicker.datePicker.maxDate = calendar.timeInMillis
     datePicker.show()
 }
 
