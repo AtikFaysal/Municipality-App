@@ -9,6 +9,7 @@ import com.pourosova.data.core.domain.base.BaseViewModel
 import com.pourosova.data.core.model.apientity.beneficiary.BeneficiaryApiEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -44,6 +45,7 @@ class BeneficiaryProfileViewModel @Inject constructor(
     }
 
     private fun updatePhotoBeneficiary(params : UpdatePhotoApiUseCase.Params){
+        Timber.e("params: ${params.image}")
         execute {
             updatePhotoApiUseCase.execute(params).collect{
                 when(it){

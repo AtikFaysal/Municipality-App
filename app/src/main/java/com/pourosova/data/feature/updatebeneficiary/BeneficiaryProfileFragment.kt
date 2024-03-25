@@ -29,11 +29,7 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
                 bitmap?.let { image->
                     binding.imageIv.setImageBitmap(image)
                     val imageFile = ImageUtils.bitmapToFile(bitmap, requireContext(), "${System.currentTimeMillis()}")
-                    val bitmapToBase64 = ImageUtils.bitmapToBase64Converter(
-                        ImageUtils.resizeImage(
-                            image
-                        )
-                    )
+                    val bitmapToBase64 = ImageUtils.bitmapToBase64Converter(image)
                     viewModel.action(UiAction.UpdatePhoto(
                         UpdatePhotoApiUseCase.Params(
                             image = bitmapToBase64,
