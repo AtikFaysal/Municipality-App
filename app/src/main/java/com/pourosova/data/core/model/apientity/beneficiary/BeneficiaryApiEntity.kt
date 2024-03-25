@@ -15,4 +15,5 @@ data class BeneficiaryApiEntity(
     val motherName: String,
     val fatherNid: String,
     val occupation: String,
+    val pic: String,
 ) : Serializable

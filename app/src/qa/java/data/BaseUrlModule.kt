@@ -18,6 +18,6 @@ class BaseUrlModule{
 
     @Provides
     @AppImageBaseUrl
-    fun provideImageBaseUrl():String = "https://esmart.redmoit.com/api/"
+    fun provideImageBaseUrl():String = "https://esmart.redmoit.com/"
 }
 

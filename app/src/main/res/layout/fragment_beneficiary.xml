@@ -126,7 +126,7 @@
                 app:placeholderText="@string/hint_enter_nid"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/fatherHusbandNidTil"
+                app:layout_constraintEnd_toStartOf="@+id/occupationTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
                 app:layout_constraintTop_toBottomOf="@+id/phoneTil">
 
@@ -190,21 +190,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/fatherHusbandNidTil"
+                android:id="@+id/fatherHusbandNameTil"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_husband_father_nid"
                 app:placeholderText="@string/hint_enter_name"
                 app:expandedHintEnabled="false"
-                android:layout_marginStart="@dimen/margin_5"
-                app:layout_constraintEnd_toEndOf="@id/serialTv"
-                app:layout_constraintStart_toEndOf="@+id/nidTil"
-                app:layout_constraintTop_toTopOf="@+id/nidTil"
-                app:layout_constraintBottom_toBottomOf="@+id/nidTil">
+                android:layout_marginTop="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="@+id/serialTv"
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/villageTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
-                    android:id="@+id/fatherHusbandNidEt"
+                    android:id="@+id/fatherHusbandNameEt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
@@ -218,14 +217,14 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_5"
                 android:hint="@string/hint_occupation"
                 app:placeholderText="@string/hint_enter_occupation"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/motherNameTil"
-                app:layout_constraintStart_toStartOf="@+id/serialTv"
-                app:layout_constraintTop_toBottomOf="@+id/nidTil">
+                app:layout_constraintEnd_toEndOf="@id/serialTv"
+                app:layout_constraintStart_toEndOf="@+id/nidTil"
+                app:layout_constraintTop_toTopOf="@+id/nidTil"
+                app:layout_constraintBottom_toBottomOf="@+id/nidTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
                     android:id="@+id/occupationEt"
@@ -244,11 +243,10 @@
                 android:hint="@string/hint_mother_name"
                 app:placeholderText="@string/hint_enter_name"
                 app:expandedHintEnabled="false"
-                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
                 app:layout_constraintEnd_toEndOf="@id/serialTv"
-                app:layout_constraintStart_toEndOf="@+id/occupationTil"
-                app:layout_constraintTop_toTopOf="@+id/occupationTil"
-                app:layout_constraintBottom_toBottomOf="@+id/occupationTil">
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/fatherHusbandNameTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
                     android:id="@+id/motherNameEt"
@@ -271,7 +269,7 @@
                 android:layout_marginEnd="@dimen/margin_5"
                 app:layout_constraintEnd_toStartOf="@+id/wordNoTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
-                app:layout_constraintTop_toBottomOf="@+id/occupationTil">
+                app:layout_constraintTop_toBottomOf="@+id/nidTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
                     android:id="@+id/villageEt"
@@ -308,15 +306,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.iamkamrul.view.ImageView
                 android:id="@+id/imageIv"
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="@dimen/_150sdp"
-                android:layout_margin="@dimen/margin_10"
+                android:layout_marginVertical="@dimen/margin_10"
                 android:scaleType="fitXY"
+                app:iv_corner_radius="@dimen/five"
                 android:background="@drawable/ic_launcher_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/villageTil"/>
+                app:layout_constraintStart_toStartOf="@+id/serialTv"
+                app:layout_constraintTop_toBottomOf="@+id/motherNameTil"/>
 
             <com.iamkamrul.textview.TextViewRegular
                 android:id="@+id/addPhotoTv"

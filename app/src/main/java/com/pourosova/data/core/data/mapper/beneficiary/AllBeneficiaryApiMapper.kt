@@ -22,6 +22,7 @@ class AllBeneficiaryApiMapper @Inject constructor() :
                 fatherNid = it.father_nid ?: "",
                 occupation = it.pesha ?: "",
                 dob = it.date_of_birth ?: "",
+                pic = it.pic ?: "",
             )
         } ?: emptyList()
     }

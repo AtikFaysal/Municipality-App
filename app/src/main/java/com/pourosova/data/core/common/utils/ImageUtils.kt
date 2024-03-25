@@ -1,4 +1,4 @@
-package co.jatri.common.utils
+package com.pourosova.data.core.common.utils
 
 import android.content.Context
 import android.graphics.Bitmap

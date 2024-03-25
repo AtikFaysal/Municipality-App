@@ -7,39 +7,47 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import co.jatri.common.utils.ImageUtils
+import com.pourosova.data.core.common.utils.ImageUtils
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.pourosova.data.R
 import com.pourosova.data.base.BaseFragment
+import com.pourosova.data.core.common.constant.AppConstants
 import com.pourosova.data.core.common.extfun.clickWithDebounce
 import com.pourosova.data.core.common.extfun.getTextFromEt
+import com.pourosova.data.core.common.extfun.loadImage
 import com.pourosova.data.core.common.extfun.showDatePickerDialog
+import com.pourosova.data.core.di.qualifier.AppImageBaseUrl
 import com.pourosova.data.core.domain.apiusecase.beneficiary.UpdateBeneficiaryApiUseCase
 import com.pourosova.data.core.domain.apiusecase.beneficiary.UpdatePhotoApiUseCase
 import com.pourosova.data.databinding.FragmentBeneficiaryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
     private val imagePicker = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result != null) {
             lifecycleScope.launch {
-                val bitmap = ImageUtils.resizeBitmapImage(ImageUtils.uriToBitmap(result.data?.data, requireContext()), 50f, true)
+                val bitmap = ImageUtils.uriToBitmap(result.data?.data, requireContext())
                 bitmap?.let { image->
                     binding.imageIv.setImageBitmap(image)
-                    val imageFile = ImageUtils.bitmapToFile(bitmap, requireContext(), "${System.currentTimeMillis()}")
                     val bitmapToBase64 = ImageUtils.bitmapToBase64Converter(image)
                     viewModel.action(UiAction.UpdatePhoto(
                         UpdatePhotoApiUseCase.Params(
                             image = bitmapToBase64,
-                            nidOrSerial = args.data.nidNo
+                            nidOrSerial = args.data.serialNo
                         )
                     ))
                 }
             }
         }
     }
+
+    @Inject
+    @AppImageBaseUrl
+    lateinit var imageBaseUrl: String
 
     private val args by navArgs<BeneficiaryProfileFragmentArgs>()
     private val viewModel by viewModels<BeneficiaryProfileViewModel>()
@@ -55,8 +63,9 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
 
         binding.addPhotoTv.clickWithDebounce {
             ImagePicker.with(this)
-                .crop()
-                .compress(1024)
+                .galleryMimeTypes(AppConstants.IMAGE_SELECTION_TYPE)
+                .cropSquare()
+                .compress(512)
                 .maxResultSize(1080, 1080)
                 .createIntent {
                     imagePicker.launch(it)
@@ -70,9 +79,9 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
         }
 
         binding.updateBtn.clickWithDebounce {
-            if(binding.fatherHusbandNidEt.getTextFromEt().isEmpty()){
+            if(binding.fatherHusbandNameEt.getTextFromEt().isEmpty()){
                 showMessage("Husband/Father Name is required")
-                binding.fatherHusbandNidEt.requestFocus()
+                binding.fatherHusbandNameEt.requestFocus()
                 return@clickWithDebounce
             }
 
@@ -93,7 +102,7 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
                    // fatherNid = binding.fatherNidEt.getTextFromEt(),
                     //husbandOrWifeNid = binding.husbandWifeNidEt.getTextFromEt().ifEmpty { null },
                     motherName = binding.motherNameEt.getTextFromEt(),
-                    fatherOrHusband = binding.fatherHusbandNidEt.getTextFromEt(),
+                    fatherOrHusband = binding.fatherHusbandNameEt.getTextFromEt(),
                    // village = binding.villageEt.getTextFromEt().ifEmpty { null },
                    // wordNo = binding.wordNoEt.getTextFromEt().ifEmpty { null }
                 )
@@ -116,7 +125,9 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
             fatherNidEt.setText(args.data.fatherNid)
             dobEt.setText(args.data.dob)
             husbandWifeNidEt.setText(args.data.husbandWifeNid)
-            fatherHusbandNidEt.setText(args.data.fatherOrHusbandName)
+            fatherHusbandNameEt.setText(args.data.fatherOrHusbandName)
+            imageIv.loadImage(url = "${imageBaseUrl}${args.data.pic}", placeholder = R.drawable.ic_launcher_background)
+            Timber.e("${imageBaseUrl}${args.data.pic}")
         }
     }
 

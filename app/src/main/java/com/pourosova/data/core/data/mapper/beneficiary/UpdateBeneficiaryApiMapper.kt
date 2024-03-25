@@ -24,6 +24,7 @@ class UpdateBeneficiaryApiMapper @Inject constructor() :
                 fatherNid = type.data?.father_nid ?: "",
                 occupation = type.data?.pesha ?: "",
                 dob = type.data?.date_of_birth ?: "",
+                pic = type.data?.pic ?: "",
             )
         )
     }

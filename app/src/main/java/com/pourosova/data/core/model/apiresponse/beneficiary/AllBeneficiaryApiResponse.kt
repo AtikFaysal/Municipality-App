@@ -18,4 +18,5 @@ data class BeneficiaryDetails(
     val mother_name: String?,
     val father_nid: String?,
     val pesha: String?,
+    val pic: String?,
 )

@@ -18,12 +18,30 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("gp-signature/esmart.jks")
+            storePassword = "esmart"
+            keyAlias = "esmart"
+            keyPassword = "esmart"
+        }
+    }
+
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
+            )
+        }
+
+        release {
+            isMinifyEnabled = false
+            isShrinkResources = false
+            signingConfig = signingConfigs.getByName("release")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -58,7 +76,7 @@ dependencies {
     implementation(libs.bundles.rxjava3.dependencies)
     implementation(libs.kotlin.coroutines)
 
-    implementation("com.github.dhaval2404:imagepicker:2.1")
+    implementation(libs.imagepicker)
 
     implementation(libs.androidx.constraint.layout)
     implementation(libs.custom.view)
