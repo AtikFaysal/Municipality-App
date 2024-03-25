@@ -11,7 +11,7 @@ class UpdatePhotoApiUseCase @Inject constructor(
 ) : ApiUseCaseParams<UpdatePhotoApiUseCase.Params, UpdatePhotoApiEntity> {
 
     data class Params(
-        val image: File?,
+        val image: String?,
         val nidOrSerial: String,
     )
 

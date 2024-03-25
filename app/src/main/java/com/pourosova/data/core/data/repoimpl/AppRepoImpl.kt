@@ -152,8 +152,8 @@ class AppRepoImpl @Inject constructor(
         return mapFromApiResponse(
             result = networkBoundResources.downloadData {
                 apiService.updateUserImage(
-                    serialNo = Utils.mConverter(params.nidOrSerial),
-                    image = Utils.mConvertImg(params.image,"image")
+                    serialNo = params.nidOrSerial,
+                    image = params.image
                 )
             },
             mapper = updatePhotoApiMapper
@@ -165,16 +165,16 @@ class AppRepoImpl @Inject constructor(
             result = networkBoundResources.downloadData {
                 apiService.updateUserData(
                     serialNo = params.serial,
-                    wordNo = params.wordNo,
-                    village = params.village,
+                    //wordNo = params.wordNo,
+                    //village = params.village,
                     name = params.name,
                     nidNo = params.nid,
                     phone = params.phone,
                     dateOfBirth = params.dateOfBirth,
                     pesha = params.occupation,
                     fatherOrHusbandName = params.fatherOrHusband,
-                    fatherNid = params.fatherNid,
-                    husbandWifeNid = params.husbandOrWifeNid,
+                    //fatherNid = params.fatherNid,
+                    //husbandWifeNid = params.husbandOrWifeNid,
                     motherName = params.motherName
                 )
             },

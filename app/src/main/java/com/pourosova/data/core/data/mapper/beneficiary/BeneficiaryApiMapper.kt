@@ -16,10 +16,10 @@ class BeneficiaryApiMapper @Inject constructor() : Mapper<BeneficiaryApiResponse
             serialNo = type.data?.serial_no ?: "",
             village = type.data?.village ?: "",
             wordNo = type.data?.word_no ?: "",
-            motherName = type.data?.word_no ?: "",
-            fatherNid = type.data?.word_no ?: "",
-            occupation = type.data?.word_no ?: "",
-            dob = type.data?.word_no ?: "",
+            motherName = type.data?.mother_name ?: "",
+            fatherNid = type.data?.father_nid ?: "",
+            occupation = type.data?.pesha ?: "",
+            dob = type.data?.date_of_birth ?: "",
         )
     }
 }

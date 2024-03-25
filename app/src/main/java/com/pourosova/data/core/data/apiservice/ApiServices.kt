@@ -70,26 +70,26 @@ interface ApiServices {
     ): Response<BeneficiaryApiResponse>
 
     @POST("beneficiary-image-upload")
-    @Multipart
+    @FormUrlEncoded
     suspend fun updateUserImage(
-        @Part("serial_no") serialNo : RequestBody,
-        @Part image : MultipartBody.Part?,
+        @Field("serial_no") serialNo : String,
+        @Field("image") image : String?,
     ): Response<UpdatePhotoApiResponse>
 
     @POST("beneficiary-data-update")
     @FormUrlEncoded
     suspend fun updateUserData(
         @Field("serial_no") serialNo : String,
-        @Field("word_no") wordNo : String?,
-        @Field("village") village : String?,
+        //@Field("word_no") wordNo : String?,
+        //@Field("village") village : String?,
         @Field("name") name : String,
         @Field("nid_no") nidNo : String,
         @Field("phone") phone : String,
         @Field("date_of_birth") dateOfBirth : String?,
         @Field("pesha") pesha : String?,
         @Field("father_or_husband_name") fatherOrHusbandName : String?,
-        @Field("husband_wife_nid") husbandWifeNid : String?,
-        @Field("father_nid") fatherNid : String?,
+        //@Field("husband_wife_nid") husbandWifeNid : String?,
+        //@Field("father_nid") fatherNid : String?,
         @Field("mother_name") motherName : String?,
     ): Response<UpdateUserApiResponse>
 }

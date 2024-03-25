@@ -12,16 +12,16 @@ class UpdateBeneficiaryApiUseCase @Inject constructor(
 
     data class Params(
         val serial : String,
-        val wordNo : String?,
-        val village : String?,
+        //val wordNo : String?,
+        //val village : String?,
         val name : String,
         val nid : String,
         val phone : String,
         val dateOfBirth : String?,
         val occupation : String?,
         val fatherOrHusband : String?,
-        val husbandOrWifeNid : String?,
-        val fatherNid : String?,
+        //val husbandOrWifeNid : String?,
+        //val fatherNid : String?,
         val motherName : String?
     )
 

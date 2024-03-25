@@ -75,7 +75,7 @@
                 app:placeholderText="@string/hint_enter_phone"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintEnd_toStartOf="@+id/dobTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
                 app:layout_constraintTop_toBottomOf="@+id/nameTil">
 
@@ -126,7 +126,7 @@
                 app:placeholderText="@string/hint_enter_nid"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintEnd_toStartOf="@+id/fatherHusbandNidTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
                 app:layout_constraintTop_toBottomOf="@+id/phoneTil">
 
@@ -149,6 +149,7 @@
                 app:placeholderText="@string/hint_enter_nid"
                 app:expandedHintEnabled="false"
                 android:layout_marginStart="@dimen/margin_5"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/serialTv"
                 app:layout_constraintStart_toEndOf="@+id/nidTil"
                 app:layout_constraintTop_toTopOf="@+id/nidTil"
@@ -174,6 +175,7 @@
                 app:placeholderText="@string/hint_enter_nid"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
+                android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
                 app:layout_constraintTop_toBottomOf="@+id/nidTil">
@@ -197,9 +199,9 @@
                 app:expandedHintEnabled="false"
                 android:layout_marginStart="@dimen/margin_5"
                 app:layout_constraintEnd_toEndOf="@id/serialTv"
-                app:layout_constraintStart_toEndOf="@+id/husbandWifeNidTil"
-                app:layout_constraintTop_toTopOf="@+id/husbandWifeNidTil"
-                app:layout_constraintBottom_toBottomOf="@+id/husbandWifeNidTil">
+                app:layout_constraintStart_toEndOf="@+id/nidTil"
+                app:layout_constraintTop_toTopOf="@+id/nidTil"
+                app:layout_constraintBottom_toBottomOf="@+id/nidTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
                     android:id="@+id/fatherHusbandNidEt"
@@ -221,9 +223,9 @@
                 app:placeholderText="@string/hint_enter_occupation"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintEnd_toStartOf="@+id/motherNameTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
-                app:layout_constraintTop_toBottomOf="@+id/husbandWifeNidTil">
+                app:layout_constraintTop_toBottomOf="@+id/nidTil">
 
                 <com.pourosova.data.core.designsystem.CustomET
                     android:id="@+id/occupationEt"
@@ -240,7 +242,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_mother_name"
-                app:placeholderText="@string/hint_enter_mother_name"
+                app:placeholderText="@string/hint_enter_name"
                 app:expandedHintEnabled="false"
                 android:layout_marginStart="@dimen/margin_5"
                 app:layout_constraintEnd_toEndOf="@id/serialTv"
@@ -267,7 +269,7 @@
                 app:placeholderText="@string/hint_enter_village"
                 app:expandedHintEnabled="false"
                 android:layout_marginEnd="@dimen/margin_5"
-                app:layout_constraintEnd_toStartOf="@+id/fatherNidTil"
+                app:layout_constraintEnd_toStartOf="@+id/wordNoTil"
                 app:layout_constraintStart_toStartOf="@+id/serialTv"
                 app:layout_constraintTop_toBottomOf="@+id/occupationTil">
 
@@ -276,6 +278,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPostalAddress"
+                    android:focusable="false"
                     android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -299,6 +302,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:focusable="false"
                     android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>

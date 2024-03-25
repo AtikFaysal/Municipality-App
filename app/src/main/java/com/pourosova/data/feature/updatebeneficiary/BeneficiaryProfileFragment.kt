@@ -1,6 +1,5 @@
 package com.pourosova.data.feature.updatebeneficiary
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
@@ -8,13 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.room.util.findColumnIndexBySuffix
 import co.jatri.common.utils.ImageUtils
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.github.dhaval2404.imagepicker.util.ImageUtil
 import com.pourosova.data.R
 import com.pourosova.data.base.BaseFragment
-import com.pourosova.data.core.common.constant.AppConstants
 import com.pourosova.data.core.common.extfun.clickWithDebounce
 import com.pourosova.data.core.common.extfun.getTextFromEt
 import com.pourosova.data.core.common.extfun.showDatePickerDialog
@@ -23,7 +19,6 @@ import com.pourosova.data.core.domain.apiusecase.beneficiary.UpdatePhotoApiUseCa
 import com.pourosova.data.databinding.FragmentBeneficiaryBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.io.File
 
 @AndroidEntryPoint
 class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
@@ -34,9 +29,14 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
                 bitmap?.let { image->
                     binding.imageIv.setImageBitmap(image)
                     val imageFile = ImageUtils.bitmapToFile(bitmap, requireContext(), "${System.currentTimeMillis()}")
+                    val bitmapToBase64 = ImageUtils.bitmapToBase64Converter(
+                        ImageUtils.resizeImage(
+                            image
+                        )
+                    )
                     viewModel.action(UiAction.UpdatePhoto(
                         UpdatePhotoApiUseCase.Params(
-                            image = imageFile,
+                            image = bitmapToBase64,
                             nidOrSerial = args.data.nidNo
                         )
                     ))
@@ -68,20 +68,14 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
         }
 
         binding.dobEt.clickWithDebounce {
-            requireActivity().showDatePickerDialog() { selectedDate ->
+            requireActivity().showDatePickerDialog { selectedDate ->
                 binding.dobEt.setText(selectedDate)
             }
         }
 
         binding.updateBtn.clickWithDebounce {
-            if(binding.fatherNidEt.getTextFromEt().isEmpty()){
-                showMessage("Father NID is required")
-                binding.fatherNidEt.requestFocus()
-                return@clickWithDebounce
-            }
-
             if(binding.fatherHusbandNidEt.getTextFromEt().isEmpty()){
-                showMessage("Husband/Father NID is required")
+                showMessage("Husband/Father Name is required")
                 binding.fatherHusbandNidEt.requestFocus()
                 return@clickWithDebounce
             }
@@ -100,12 +94,12 @@ class BeneficiaryProfileFragment : BaseFragment<FragmentBeneficiaryBinding>() {
                     nid = args.data.nidNo,
                     dateOfBirth = binding.dobEt.getTextFromEt().ifEmpty { null },
                     occupation = binding.occupationEt.getTextFromEt().ifEmpty { null },
-                    fatherNid = binding.fatherNidEt.getTextFromEt(),
-                    husbandOrWifeNid = binding.husbandWifeNidEt.getTextFromEt().ifEmpty { null },
+                   // fatherNid = binding.fatherNidEt.getTextFromEt(),
+                    //husbandOrWifeNid = binding.husbandWifeNidEt.getTextFromEt().ifEmpty { null },
                     motherName = binding.motherNameEt.getTextFromEt(),
                     fatherOrHusband = binding.fatherHusbandNidEt.getTextFromEt(),
-                    village = binding.villageEt.getTextFromEt().ifEmpty { null },
-                    wordNo = binding.wordNoEt.getTextFromEt().ifEmpty { null }
+                   // village = binding.villageEt.getTextFromEt().ifEmpty { null },
+                   // wordNo = binding.wordNoEt.getTextFromEt().ifEmpty { null }
                 )
             ))
         }

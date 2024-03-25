@@ -18,10 +18,10 @@ class AllBeneficiaryApiMapper @Inject constructor() :
                 serialNo = it.serial_no ?: "",
                 village = it.village ?: "",
                 wordNo = it.word_no ?: "",
-                motherName = it.word_no ?: "",
-                fatherNid = it.word_no ?: "",
-                occupation = it.word_no ?: "",
-                dob = it.word_no ?: "",
+                motherName = it.mother_name ?: "",
+                fatherNid = it.father_nid ?: "",
+                occupation = it.pesha ?: "",
+                dob = it.date_of_birth ?: "",
             )
         } ?: emptyList()
     }
